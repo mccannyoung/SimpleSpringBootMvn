@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>demoMaven</artifactId>
+	<artifactId>demomaven</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demoMaven</name>
+	<name>demomaven</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -22,6 +22,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<start-class>com.example.demoMaven.DemoMavenApplication</start-class>
+		<docker.image.prefix>springio</docker.image.prefix>
 	</properties>
 
 	<dependencies>
@@ -39,15 +41,15 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	
 	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
